@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { userRoutes } from "../modules/user/user.routes";
 import { authRoutes } from "../modules/auth/auth.route";
 import { jobsRoutes } from "../modules/jobs/jobs.routes";
+import { jobsApplicationRoutes } from "../modules/applications/applications.routes";
 
 const router = Router();
 
@@ -25,10 +26,10 @@ const moduleRoutes = [
         path: '/jobs',
         route: jobsRoutes
     },
-    // {
-    //     path: '/applications',
-    //     route: 
-    // }
+    {
+        path: '/applications',
+        route: jobsApplicationRoutes
+    }
 ]
 
 moduleRoutes.forEach(route => {

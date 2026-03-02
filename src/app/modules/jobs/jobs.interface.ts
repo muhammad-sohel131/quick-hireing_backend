@@ -1,5 +1,7 @@
+import { Types } from "mongoose";
+
 export interface IJob {
-//   _id?: string;
+  _id?: Types.ObjectId;
   title: string;
   company: string;
   companyImageUrl: string;
