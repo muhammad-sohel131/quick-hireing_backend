@@ -8,10 +8,10 @@ import { AuthServices } from "./auth.services";
 
 const credentialsLogin = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const { user, accessToken, refreshToken } =
+    const { user, accessToken } =
       await AuthServices.credentialsLogin(req.body);
 
-    setAuthCookie(res, { accessToken, refreshToken });
+    setAuthCookie(res, { accessToken });
 
     const { email, role, name } = user;
 
@@ -21,7 +21,6 @@ const credentialsLogin = catchAsync(
       message: "User Logged In Successfully",
       data: {
         accessToken: accessToken,
-        refreshToken: refreshToken,
         user: { email, role, name },
       },
     });

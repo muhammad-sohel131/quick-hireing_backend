@@ -25,11 +25,10 @@ const credentialsLogin = async (payload: Partial<IUser>) => {
     throw new AppError(httpStatus.BAD_REQUEST, "Incorrect Password");
   }
 
-  const { accessToken, refreshToken } = createUserTokens(isUserExist);
+  const { accessToken} = createUserTokens(isUserExist);
   const { password: pass, ...rest } = isUserExist.toObject();
   return {
     accessToken,
-    refreshToken,
     user: rest,
   };
 };
