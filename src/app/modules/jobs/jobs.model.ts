@@ -1,4 +1,4 @@
-import mongoose, { Model,Schema } from "mongoose";
+import mongoose, { Model, Schema } from "mongoose";
 import { IJob } from "./jobs.interface";
 
 const JobSchema = new Schema<IJob>(
@@ -21,8 +21,12 @@ const JobSchema = new Schema<IJob>(
       type: String,
       required: true,
     },
+    isFeatured: {
+      type: Boolean,
+      default: false,
+    },
     category: {
-      type: String,
+      type: [String],
       required: true,
       enum: [
         "Design",

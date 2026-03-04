@@ -53,5 +53,5 @@ export const jobController = {
     createJob,
     getJobById,
     deleteJobById,
-    getJobs
+    getJobs,
 }

@@ -6,7 +6,8 @@ export interface IJob {
   company: string;
   companyImageUrl: string;
   location: string;
-  category: string;
+  category: [string];
   description: string;
+  isFeatured: boolean;
   createdAt: Date;
 }

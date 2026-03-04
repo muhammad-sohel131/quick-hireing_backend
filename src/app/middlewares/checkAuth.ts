@@ -9,7 +9,7 @@ import { User } from "../modules/user/user.model";
 
 export const checkAuth = (...roles : string[]) => async(req: Request, res: Response, next: NextFunction) => {
   try{
-    const accessToken = req.headers.authorization || req.cookies.accessToken;
+    const accessToken = req.cookies.accessToken || req.headers.authorization;
 
     if(!accessToken){
       throw new AppError(403, 'Missing Access Token')
