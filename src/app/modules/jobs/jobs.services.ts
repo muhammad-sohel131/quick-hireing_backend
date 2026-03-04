@@ -25,5 +25,5 @@ export const JobServices = {
   createJob,
   getJobById,
   getJobs,
-  deleteJobById
+  deleteJobById,
 };
