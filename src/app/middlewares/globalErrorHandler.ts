@@ -10,7 +10,7 @@ export const globalErrorHandle = (
   res: Response,
   next: NextFunction,
 ) => {
-  if (envVars.NODE_ENV === "development") {
+  if (envVars.ENVAIRONMENT === "development") {
     console.log(err);
   }
 
@@ -56,7 +56,7 @@ export const globalErrorHandle = (
     success: false,
     message,
     errorsSource,
-    err: envVars.NODE_ENV === "development" ? err : null,
-    stack: envVars.NODE_ENV === "development" ? err.stack : null,
+    err: envVars.ENVAIRONMENT === "development" ? err : null,
+    stack: envVars.ENVAIRONMENT === "development" ? err.stack : null,
   });
 };
