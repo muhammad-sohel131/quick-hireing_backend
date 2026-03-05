@@ -1,0 +1,11 @@
+import { Types } from "mongoose";
+export interface IJobApplication extends Document {
+    _id?: Types.ObjectId;
+    job_id: Types.ObjectId;
+    name: string;
+    email: string;
+    resume_link: string;
+    cover_note?: string;
+    created_at: Date;
+}
+//# sourceMappingURL=applications.interface.d.ts.map
