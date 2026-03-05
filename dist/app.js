@@ -9,6 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const routes_1 = __importDefault(require("./app/routes"));
 const env_1 = require("./app/config/env");
 const globalErrorHandler_1 = require("./app/middlewares/globalErrorHandler");
+const notFound_1 = require("./app/middlewares/notFound");
 const app = (0, express_1.default)();
 app.use((0, cookie_parser_1.default)());
 // middlewares
@@ -18,7 +19,14 @@ app.use((0, cors_1.default)({
 }));
 app.use(express_1.default.json());
 // routes
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Quick Hiring API",
+    });
+});
 app.use("/api", routes_1.default);
 app.use(globalErrorHandler_1.globalErrorHandle);
+app.use(notFound_1.notFound);
 exports.default = app;
 //# sourceMappingURL=app.js.map
