@@ -8,7 +8,7 @@ export const globalErrorHandle = (
   err: any,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   if (envVars.NODE_ENV === "development") {
     console.log(err);
@@ -44,11 +44,9 @@ export const globalErrorHandle = (
     message = simplifiedError.message;
     statusCode = simplifiedError.statusCode;
     errorsSource = simplifiedError.errorSources as IErrorSources[];
-
   } else if (err instanceof AppError) {
     statusCode = err.statusCode;
     message = err.message;
-    
   } else if (err instanceof Error) {
     statusCode = 500;
     message = err.message;

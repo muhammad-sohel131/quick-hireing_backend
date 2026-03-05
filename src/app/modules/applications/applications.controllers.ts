@@ -14,7 +14,19 @@ const createJobApplication = catchAsync(async (req: Request, res: Response) => {
         data: createdJobApplication
     })
 })
+const getJobApplications = catchAsync(async (req: Request, res: Response) => {
+    const payload = req.body
+    const jobApplications = await JobApplicationServices.getJobApplications()
+    
+    sendResponse(res, {
+        success: true,
+        message: "Fetched Job Application",
+        statusCode: 200,
+        data: jobApplications
+    })
+})
 
 export const jobApplicationController = {
-    createJobApplication
+    createJobApplication,
+    getJobApplications
 }

@@ -5,7 +5,11 @@ const createJobApplication = async (payload: Partial<IJobApplication>) => {
   const jobApplication = await JobApplication.create(payload);
   return jobApplication;
 };
-
+const getJobApplications = async () => {
+  const jobApplications = await JobApplication.find();
+  return jobApplications;
+};
 export const JobApplicationServices = {
-  createJobApplication
+  createJobApplication,
+  getJobApplications
 };
