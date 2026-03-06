@@ -30,14 +30,10 @@ const credentialsLogin = catchAsync(
 
 const logout = catchAsync(
   async (req, res, next) => {
-    console.log(envVars)
-    const isProduction = envVars.ENVAIRONMENT === 'production';
     res.clearCookie("accessToken", {
       httpOnly: true,
-      secure: isProduction,
-      sameSite: isProduction ? 'none' as const : 'lax' as const,
-      maxAge: 24 * 60 * 60 * 1000,
-      path: '/',
+      secure: true,
+      sameSite: "none",
     });
     sendResponse(res, {
       success: true,
