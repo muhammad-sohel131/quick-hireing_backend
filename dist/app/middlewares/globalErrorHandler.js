@@ -8,7 +8,7 @@ const env_1 = require("../config/env");
 const AppError_1 = __importDefault(require("../helpers/AppError"));
 const errorFormatters_1 = require("../helpers/errorFormatters");
 const globalErrorHandle = (err, req, res, next) => {
-    if (env_1.envVars.NODE_ENV === "development") {
+    if (env_1.envVars.ENVAIRONMENT === "development") {
         console.log(err);
     }
     let statusCode = 500;
@@ -52,8 +52,8 @@ const globalErrorHandle = (err, req, res, next) => {
         success: false,
         message,
         errorsSource,
-        err: env_1.envVars.NODE_ENV === "development" ? err : null,
-        stack: env_1.envVars.NODE_ENV === "development" ? err.stack : null,
+        err: env_1.envVars.ENVAIRONMENT === "development" ? err : null,
+        stack: env_1.envVars.ENVAIRONMENT === "development" ? err.stack : null,
     });
 };
 exports.globalErrorHandle = globalErrorHandle;

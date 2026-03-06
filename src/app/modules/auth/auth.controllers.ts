@@ -5,6 +5,7 @@ import { sendResponse } from "../../utils/sendResponse";
 import httpStatus from "http-status-codes";
 import { setAuthCookie } from "../../utils/setCookies";
 import { AuthServices } from "./auth.services";
+import { envVars } from "../../config/env";
 
 const credentialsLogin = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -28,16 +29,15 @@ const credentialsLogin = catchAsync(
 );
 
 const logout = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
+  async (req, res, next) => {
+    console.log(envVars)
+    const isProduction = envVars.ENVAIRONMENT === 'production';
     res.clearCookie("accessToken", {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
-    });
-    res.clearCookie("refreshToken", {
-      httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: isProduction,
+      sameSite: isProduction ? 'none' as const : 'lax' as const,
+      maxAge: 24 * 60 * 60 * 1000,
+      path: '/',
     });
     sendResponse(res, {
       success: true,
@@ -45,7 +45,7 @@ const logout = catchAsync(
       message: "User Logged Out Successfully!",
       data: null,
     });
-  },
+  }
 );
 
 export const AuthControllers = {
