@@ -41,7 +41,7 @@ PORT=5000
 
 DB_URL=mongodb+srv://username:password@cluster0.l1cudpz.mongodb.net/?appName=Cluster0
 
-NODE_ENV=development
+ENVAIRONMENT=development
 
 JWT_ACCESS_SECRET=sdfjfjlkas923omande2
 JWT_ACCESS_EXPIRES=30d
