@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"file":"setCookies.d.ts","sourceRoot":"","sources":["../../../src/app/utils/setCookies.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAGnC,MAAM,WAAW,UAAU;IACzB,WAAW,CAAC,EAAE,MAAM,CAAC;CACtB;AAED,eAAO,MAAM,aAAa,GAAI,KAAK,QAAQ,EAAE,WAAW,UAAU,SAUjE,CAAC"}
+=======
+{"version":3,"file":"setCookies.d.ts","sourceRoot":"","sources":["../../../src/app/utils/setCookies.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAGnC,MAAM,WAAW,UAAU;IACzB,WAAW,CAAC,EAAE,MAAM,CAAC;CACtB;AAED,eAAO,MAAM,aAAa,GAAI,KAAK,QAAQ,EAAE,WAAW,UAAU,SAYjE,CAAC"}
+>>>>>>> 607dd2935f064727d558d2f0bf72e242d1a30dad
