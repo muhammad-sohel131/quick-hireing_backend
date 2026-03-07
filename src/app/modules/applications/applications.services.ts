@@ -6,7 +6,7 @@ const createJobApplication = async (payload: Partial<IJobApplication>) => {
   return jobApplication;
 };
 const getJobApplications = async () => {
-  const jobApplications = await JobApplication.find();
+  const jobApplications = await JobApplication.find().populate("job_id");
   return jobApplications;
 };
 export const JobApplicationServices = {
